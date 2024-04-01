@@ -1,27 +1,23 @@
 
-function Navbar({value, setValue, max}){
+function Navbar({setValue, pokemonList}){
 
-    
-      const decrement = () =>{
-        setValue(value-1)
-      }
-        const increment = ()=>{
-        setValue(value+1)
+      const handleClick = (i) =>{
+        setValue(i)
       }
 
 return(
 
   <div>
-      { value > 0 ?
-        <button onClick={decrement}>Précédent</button>
-        :
-        <></>
-      }
-      {value < max ?
-      <button onClick={increment}>Suivant</button>
-      :
-      <></>
-      }
+    <div>
+    {
+         pokemonList.map((poki, index) => 
+            <button key={index} onClick={() => handleClick(index)}>
+                {poki.name}
+            </button>
+         )
+    }
+    </div>
+
   </div>
 )}
 
