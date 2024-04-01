@@ -2,7 +2,6 @@ import PropTypes from "prop-types"
 function PokemonCard({pokemon}) {
     
 
-
     return(
         <div>
         <figure>
@@ -26,4 +25,5 @@ PokemonCard.prototype ={
         name: PropTypes.string.isRequired
     })
 }
+
 export default PokemonCard

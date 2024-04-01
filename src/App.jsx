@@ -1,17 +1,11 @@
+import Navbar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard"
-
 import { useState } from "react";
 
 function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const increment = ()=>{
-    setPokemonIndex(pokemonIndex+1)
-  }
-  const decrement = () =>{
-    setPokemonIndex(pokemonIndex-1)
-  }
   const pokemonList = [
     {
         name: "bulbasaur",
@@ -41,17 +35,7 @@ function App() {
   return (
     <>
       <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-      { pokemonIndex > 0 ?
-        <button onClick={decrement}>Précédent</button>
-        :
-        <></>
-      }
-      {pokemonIndex < pokemonList.length - 1 ?
-      <button onClick={increment}>Suivant</button>
-      :
-      <></>
-      }
-
+      <Navbar value={pokemonIndex} setValue={setPokemonIndex} max={pokemonList.length - 1} />
     </>
   )
 }
