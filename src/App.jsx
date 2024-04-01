@@ -1,6 +1,6 @@
 import Navbar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
 
@@ -31,6 +31,11 @@ function App() {
         name: "mew",
       },
     ];
+
+    useEffect(() => {
+      
+      alert("hello pokemon trainer :)")
+    }, [])
 
   return (
     <>
